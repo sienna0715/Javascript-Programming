@@ -1,5 +1,5 @@
 /*
-문제 풀이
+<문제 풀이>
 1. 문자열로 된 today 매개변수를 날짜로 변환한다.
 2. 문자열로 된 terms 매개변수를 객체 형태로 만들기 위해 termType 변수를 만들어준다.
 3. terms를 순회하며 공백을 기준으로 분리한 다음, 구조분해할당으로 각 변수에 저장한다.
@@ -16,20 +16,20 @@ function solution(today, terms, privacies) {
   const result = [];
   const expire = new Date(today);
   const termType = {};
-  
+
   terms.forEach((item) => {
-      const [type, term] = item.split(' ');
-      termType[type] = +term;
-  })
-  
+    const [type, term] = item.split(" ");
+    termType[type] = +term;
+  });
+
   privacies.forEach((item, idx) => {
-      const [date, type] = item.split(' ');
-      const deadLine = new Date(date);
-      
-      deadLine.setMonth(deadLine.getMonth() + termType[type]);
-      
-      if (deadLine <= expire) result.push(idx + 1);
-  })
+    const [date, type] = item.split(" ");
+    const deadLine = new Date(date);
+
+    deadLine.setMonth(deadLine.getMonth() + termType[type]);
+
+    if (deadLine <= expire) result.push(idx + 1);
+  });
 
   return result;
 }
