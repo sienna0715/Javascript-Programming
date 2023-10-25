@@ -47,5 +47,5 @@
 <img src='image.png' alt='console' width='400' /><br />
 
 <strong>getMonth</strong><br />
-getMonth는 날짜의 월을 얻을 수 있다. 0~11로 표현하며, 0이 1월이다.<br />
+getMonth는 날짜의 월을 얻을 수 있다. 0~11로 표현하며, 0이 1월이다. <br />
 getMonth의 달이 11(12월)을 넘으면 다시 1월부터 센다.
