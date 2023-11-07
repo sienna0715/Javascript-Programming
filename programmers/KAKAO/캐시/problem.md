@@ -37,6 +37,24 @@
 ＞  <br />
 
 ### Total elapsed time ⍩
-> 분
+> 1시간
 
 ### New Thing
+본 문제는 조건에도 명시되어 있듯이 LRU 알고리즘을 사용하여 문제를 풀어야 한다.
+
+**LPU(Least Recently Used) 란?** <br />
+가장 오랫동안 참조되지 않은 페이지를 교체하는 방식이다.
+LRU는 사용된지 가장 오래된 페이지는 앞으로도 사용될 확률이 낮다는 가설에 의해 만들어진 알고리즘이다.
+
+<img src='image-1.png' alt='console' width='400' /><br />
+
+그림처럼, 캐시에 최신 캐시 순서대로 쌓이는 데, 이때 캐시가 가득 찼을 때는 가장 오랫동안 참조되지 않은 페이지를 없앤 후 새로운 캐시를 저장하는 방식인 것이다. <br />
+나의 경우 LPU를 이해하자마자 Queque 자료 구조가 떠올랐고, 때문에 Linked List 방식으로 문제를 풀 수 있겠다는 생각을 하였다.
+
+어떤 분들은 이중 연결 리스트로도 푸신 것 같다!
+> LPU 알고리즘을 구현할 때는 Doubly Linked List를 사용하고 head에 가까운 node 일수록 가장 최근에 참조된 페이지, tail에 가까운 node 일수록 가장 오랫동안 참조되지 않는 페이지이다. <br />
+LRU의 개념에 따라 cache size를 넘어서게 된다면 tail 에 가까운 페이지가 먼저 삭제시키면 된다.
+
+
+### Process
+<img src='image.png' alt='console' width='400' /><br />
